@@ -1,0 +1,16 @@
+fn main () {
+    println!("in main");
+    fizz();
+}
+
+#[inline(never)]
+pub fn fizz() {
+    for i in 1..=100 {
+        match (i % 3, i % 5) {
+            (0,0)=>println!("fizzbuzz"),
+            (0,_)=>println!("fizz"),
+            (_,0)=>println!("buzz"),
+            _=> println!("{}", i),
+        }
+    }
+}
